@@ -1,4 +1,4 @@
-package L1_UML.L1E2;
+package L1_UML.L1E2.src;
 public class Product1 implements Product {
     @Override
     public void doSomething() {

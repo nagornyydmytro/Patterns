@@ -1,4 +1,4 @@
-package L1_UML.L1E2;
+package L1_UML.L1E2.src;
 public class Main {
     public static void main(String[] args) {
         Creator creator1 = new ConcreteCreator1();

@@ -1,4 +1,4 @@
-package L1_UML.L1E1;
+package L1_UML.L1E1.src;
 public class Car {
     private final Engine engine;
     private final Wheel wheel;
