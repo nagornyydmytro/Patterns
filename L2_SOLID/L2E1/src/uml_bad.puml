@@ -1,0 +1,44 @@
+@startuml
+
+class Client
+class GameScene {
+  - level : String
+  + addMonster(type : MonsterType) : void
+  + start() : void
+}
+
+enum MonsterType {
+  ZOMBIE
+  IMP
+  DEMON
+  CACODEMON
+}
+
+class Demon {
+  - level : String
+  + shoot() : void
+}
+
+class Imp {
+  - level : String
+  + shoot() : void
+}
+
+class Zombie {
+  - level : String
+  + shoot() : void
+}
+
+class Cacodemon {
+  - level : String
+  + shoot() : void
+}
+
+Client --> GameScene
+GameScene --> MonsterType
+GameScene --> Demon
+GameScene --> Imp
+GameScene --> Zombie
+GameScene --> Cacodemon
+
+@enduml

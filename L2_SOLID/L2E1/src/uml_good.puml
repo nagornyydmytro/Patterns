@@ -1,0 +1,42 @@
+@startuml
+
+interface Monster {
+  + shoot() : void
+}
+
+class Demon
+class Imp
+class Zombie
+class Cacodemon
+
+Monster <|.. Demon
+Monster <|.. Imp
+Monster <|.. Zombie
+Monster <|.. Cacodemon
+
+enum MonsterType {
+  ZOMBIE
+  IMP
+  DEMON
+  CACODEMON
+}
+
+class MonsterFactory {
+  + create(type : MonsterType, level : String) : Monster
+}
+
+class GameScene {
+  - level : String
+  - monsters : List
+  + addMonster(type : MonsterType) : void
+  + start() : void
+}
+
+class Client
+
+Client --> GameScene
+GameScene o-- Monster
+GameScene --> MonsterFactory
+MonsterFactory --> MonsterType
+
+@enduml
