@@ -1,0 +1,53 @@
+@startuml
+
+package L1E3 {
+
+interface Readable {
+  +checkout() : void
+  +returnBook() : void
+}
+
+class Book {
+  ~name : String
+  ~checkedOut : boolean
+  +Book(name:String, checkedOut:boolean)
+  +checkout() : void
+  +returnBook() : void
+}
+
+class FictionBook {
+  ~isAPlay : boolean
+  +FictionBook(name:String, isAPlay:boolean)
+}
+
+class NonfictionBook {
+  +NonfictionBook(name:String)
+}
+
+class BookCollection {
+  -children : ArrayList<Readable>
+  +getChildren() : ArrayList<Readable>
+  +add(readable: Readable) : void
+  +remove(readable: Readable) : void
+  +checkout() : void
+  +returnBook() : void
+}
+
+class LibraryClient {
+  +main(args:String[]) : void
+  +checkoutReadable(readable:Readable) : void
+  +returnReadable(readable:Readable) : void
+}
+
+Book ..|> Readable
+BookCollection ..|> Readable
+
+FictionBook --|> Book
+NonfictionBook --|> Book
+
+BookCollection o-- "0..*" Readable : children
+LibraryClient ..> Readable
+
+}
+
+@enduml
