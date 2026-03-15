@@ -1,4 +1,4 @@
-package L3_Factory_Method.L3E1.src;
+package L3_Factory_Method.L3E1;
 
 public abstract class CoffeeShop {
 
