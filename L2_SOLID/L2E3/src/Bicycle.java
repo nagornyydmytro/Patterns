@@ -1,5 +1,4 @@
 package L2_SOLID.L2E3.src;
-
 public class Bicycle extends Vehicle {
     private int numGears = 21; // кількість передач
 
