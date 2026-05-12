@@ -20,12 +20,19 @@ public class Director {
                 .setDiameter(14)
                 .build();
 
+        Tire tire = new TireBuilder()
+                .setWidth(185)
+                .setProfile(65)
+                .setSeason(Tire.Season.Summer)
+                .build();
+
         return new CarBuilder()
                 .setType(Car.Type.Sedan)
                 .setCarColor(Car.CarColor.White)
                 .setEngine(engine)
                 .setTransmission(transmission)
                 .setWheel(wheel)
+                .setTire(tire)
                 .build();
     }
 
@@ -47,12 +54,19 @@ public class Director {
                 .setDiameter(18)
                 .build();
 
+        Tire tire = new TireBuilder()
+                .setWidth(255)
+                .setProfile(55)
+                .setSeason(Tire.Season.AllSeason)
+                .build();
+
         return new CarBuilder()
                 .setType(Car.Type.SUV)
                 .setCarColor(Car.CarColor.Black)
                 .setEngine(engine)
                 .setTransmission(transmission)
                 .setWheel(wheel)
+                .setTire(tire)
                 .build();
     }
 
@@ -74,12 +88,19 @@ public class Director {
                 .setDiameter(15)
                 .build();
 
+        Tire tire = new TireBuilder()
+                .setWidth(195)
+                .setProfile(55)
+                .setSeason(Tire.Season.Winter)
+                .build();
+
         return new CarBuilder()
                 .setType(Car.Type.Hatchback)
                 .setCarColor(Car.CarColor.Red)
                 .setEngine(engine)
                 .setTransmission(transmission)
                 .setWheel(wheel)
+                .setTire(tire)
                 .build();
     }
 }

@@ -6,6 +6,7 @@ public class CarBuilder {
     private Engine engine;
     private Transmission transmission;
     private Wheel wheel;
+    private Tire tire;
 
     public CarBuilder setType(Car.Type type) {
         this.type = type;
@@ -32,7 +33,12 @@ public class CarBuilder {
         return this;
     }
 
+    public CarBuilder setTire(Tire tire) {
+        this.tire = tire;
+        return this;
+    }
+
     public Car build() {
-        return new Car(type, carColor, engine, transmission, wheel);
+        return new Car(type, carColor, engine, transmission, wheel, tire);
     }
 }
