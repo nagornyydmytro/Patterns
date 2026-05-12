@@ -1,0 +1,5 @@
+{
+  "java.project.referencedLibraries": [
+    "L8_Adapter/L8E1/libs/**/*.jar"
+  ]
+}
