@@ -1,5 +1,6 @@
 {
   "java.project.referencedLibraries": [
-    "L8_Adapter/L8E1/libs/**/*.jar"
+    "L8_Adapter/L8E1/libs/**/*.jar",
+    "L8_Adapter/L8E2/libs/**/*.jar"
   ]
 }
