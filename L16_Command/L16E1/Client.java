@@ -1,32 +1,55 @@
 package L16_Command.L16E1;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Client {
     public static void main(String[] args) {
 
-        Lamp kitchenLamp = new Lamp("Kitchen");
-        Lamp hallLamp = new Lamp("Hall");
-        Lamp bedroomLamp = new Lamp("Bedroom");
-        Lamp bathroomLamp = new Lamp("Bathroom");
+        Light kitchenLight = new Light("Kitchen");
+        Light hallLight = new Light("Hall");
+        Light bedroomLight = new Light("Bedroom");
+        Light bathroomLight = new Light("Bathroom");
 
-        Controller controllerKitchenLamp = new Controller();
-        Controller controllerHallLamp = new Controller();
-        Controller controllerBedroomLamp = new Controller();
-        Controller controllerBathroomLamp = new Controller();
-        Controller controllerUniversal = new Controller();
+        Controller kitchenController = new Controller();
+        Controller hallController = new Controller();
+        Controller bedroomController = new Controller();
+        Controller bathroomController = new Controller();
+        Controller universalController = new Controller();
+
+        kitchenController.setOnCommand(new LightOnCommand(kitchenLight));
+        kitchenController.setOffCommand(new LightOffCommand(kitchenLight));
+
+        hallController.setOnCommand(new LightOnCommand(hallLight));
+        hallController.setOffCommand(new LightOffCommand(hallLight));
+
+        bedroomController.setOnCommand(new LightOnCommand(bedroomLight));
+        bedroomController.setOffCommand(new LightOffCommand(bedroomLight));
+
+        bathroomController.setOnCommand(new LightOnCommand(bathroomLight));
+        bathroomController.setOffCommand(new LightOffCommand(bathroomLight));
+
+        List<Light> allLights = Arrays.asList(
+                kitchenLight,
+                hallLight,
+                bedroomLight,
+                bathroomLight
+        );
+
+        universalController.setOffCommand(new UniversalLightOffCommand(allLights));
 
         // Simulation
-        controllerKitchenLamp.on();
-        controllerHallLamp.on();
-        controllerBedroomLamp.on();
+        kitchenController.on();
+        hallController.on();
+        bedroomController.on();
 
-        controllerKitchenLamp.off();
-        controllerHallLamp.off();
-        controllerBedroomLamp.off();
+        hallController.off();
 
-        controllerBedroomLamp.on();
-        controllerBathroomLamp.on();
+        bathroomController.on();
+        hallController.on();
 
-        controllerUniversal.off();
+        System.out.println("--- Universal OFF ---");
 
+        universalController.off();
     }
 }
