@@ -1,0 +1,9 @@
+package L21_State.L21E2;
+
+public interface State {
+    void play(MediaPlayer mediaPlayer);
+    void pause(MediaPlayer mediaPlayer);
+    void next(MediaPlayer mediaPlayer);
+    void prev(MediaPlayer mediaPlayer);
+    void stop(MediaPlayer mediaPlayer);
+}
